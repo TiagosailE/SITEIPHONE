@@ -1,0 +1,8 @@
+node_modules/
+playwright-report/
+test-results/
+.lighthouseci/
+
+# Notas de trabalho e progresso -- ficam so no disco local.
+/NOTES.md
+/PROGRESS.md
