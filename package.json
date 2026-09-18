@@ -1,0 +1,36 @@
+{
+  "name": "arquivo-iphone",
+  "version": "2.0.0",
+  "private": true,
+  "description": "Acervo do iPhone: história, modelos, fotos e campanhas. Site estático sem dependências em produção.",
+  "license": "MIT",
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "start": "node scripts/serve.mjs",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "lint": "npm run lint:js && npm run lint:css && npm run lint:html",
+    "lint:js": "eslint .",
+    "lint:css": "stylelint \"site/**/*.css\"",
+    "lint:html": "html-validate \"site/**/*.html\"",
+    "links": "node scripts/check-links.mjs",
+    "test": "playwright test",
+    "lighthouse": "lhci autorun",
+    "ci": "npm run format:check && npm run lint && npm run links && npm run test && npm run lighthouse"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.13.0",
+    "@eslint/js": "^10.0.1",
+    "@lhci/cli": "^0.15.1",
+    "@playwright/test": "^1.63.0",
+    "eslint": "^10.10.0",
+    "globals": "^17.12.0",
+    "html-validate": "^11.16.0",
+    "prettier": "^3.9.8",
+    "stylelint": "^17.15.0",
+    "stylelint-config-standard": "^40.0.0"
+  }
+}

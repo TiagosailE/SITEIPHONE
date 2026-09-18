@@ -1,0 +1,19 @@
+# Uma atualização por mês, tudo num PR só por ecossistema: o site não tem
+# dependência em produção, então não vale abrir um PR por pacote.
+version: 2
+updates:
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: monthly
+    groups:
+      ferramentas:
+        patterns: ['*']
+
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: monthly
+    groups:
+      actions:
+        patterns: ['*']

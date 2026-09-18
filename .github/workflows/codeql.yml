@@ -1,0 +1,33 @@
+name: CodeQL
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  schedule:
+    - cron: '17 6 * * 1'
+
+permissions:
+  contents: read
+
+jobs:
+  analyze:
+    name: Análise de segurança (JavaScript do site)
+    runs-on: ubuntu-latest
+    permissions:
+      security-events: write
+    steps:
+      - uses: actions/checkout@v7
+
+      # Analisa o código que vai ao ar (site/). Testes e o servidor local de
+      # desenvolvimento em scripts/ não são publicados.
+      - uses: github/codeql-action/init@v4
+        with:
+          languages: javascript-typescript
+          config: |
+            paths:
+              - site
+
+      - uses: github/codeql-action/analyze@v4
+        with:
+          category: /language:javascript-typescript
