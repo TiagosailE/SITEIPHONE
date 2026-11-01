@@ -22,15 +22,15 @@
     "ci": "npm run format:check && npm run lint && npm run links && npm run test && npm run lighthouse"
   },
   "devDependencies": {
-    "@axe-core/playwright": "^4.13.0",
+    "@axe-core/playwright": "^4.14.0",
     "@eslint/js": "^10.0.1",
     "@lhci/cli": "^0.15.1",
-    "@playwright/test": "^1.63.0",
-    "eslint": "^10.10.0",
-    "globals": "^17.12.0",
-    "html-validate": "^11.16.0",
-    "prettier": "^3.9.8",
-    "stylelint": "^17.15.0",
+    "@playwright/test": "^1.64.1",
+    "eslint": "^10.13.0",
+    "globals": "^17.13.0",
+    "html-validate": "^11.17.0",
+    "prettier": "^3.9.10",
+    "stylelint": "^17.16.0",
     "stylelint-config-standard": "^40.0.0"
   }
 }
